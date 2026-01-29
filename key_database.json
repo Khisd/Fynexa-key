@@ -1,23 +1,23 @@
 {
-  "key_info": {
-    "key_id": "PANZ_ID",
-    "key_name": "FYNEXA-VAHG-MCEF-RVLX",
-    "key_token": "FYNEXA-PJDN-QWFP-QUEK",
-    "status": "active",
-    "owner": "panz",
-    "created_date": "2026-01-29",
-    "expiry_date": "2026-02-28",
-    "expiry_days": 30
-  },
-  "trading_settings": {
-    "max_lot": 0.05,
-    "symbols_allowed": [
-      "XAUUSD"
-    ]
-  },
-  "metadata": {
-    "generated_by": "KEYL Manager",
-    "generated_at": "2026-01-29T06:56:48.322Z",
-    "version": "2.1"
-  }
+    "key_info": {
+        "key_id": "PANZ_ID",
+        "key_name": "FYNEXA-VAHG-MCEF-RVLX",
+        "key_token": "FYNEXA-PJDN-QWFP-QUEK",
+        "status": "active",
+        "owner": "panz",
+        "created_date": "2026-01-29",
+        "expiry_date": "2026-02-28",
+        "expiry_days": 30
+    },
+    "trading_settings": {
+        "max_lot": 0.05,
+        "symbols_allowed": [
+            "XAUUSD"
+        ]
+    },
+    "metadata": {
+        "generated_by": "KEYL Manager",
+        "generated_at": "2026-01-29T06:56:48.322Z",
+        "version": "2.1"
+    }
 }
