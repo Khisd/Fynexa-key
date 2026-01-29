@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "key": "LIC-ABCD-1234",
+    "role": "admin",
+    "expiredAt": "2026-01-01T00:00:00.000Z",
+    "active": true,
+    "createdAt": "2026-01-29T12:00:00.000Z"
+  }
+]
