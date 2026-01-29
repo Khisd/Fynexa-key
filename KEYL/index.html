@@ -1,195 +1,42 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KEYL - GitHub Database Manager</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <div class="header-main">
-                <h1><i class="fas fa-key"></i> KEYL</h1>
-                <p class="subtitle">GitHub Database CRUD Interface</p>
+<!-- Tambahkan di index.html sebelum </body> -->
+<div id="authModal" class="modal">
+    <div class="modal-content">
+        <h3><i class="fas fa-key"></i> GitHub Authentication</h3>
+        
+        <div class="auth-form">
+            <div class="form-group">
+                <label><i class="fab fa-github"></i> GitHub Token</label>
+                <input type="password" id="githubToken" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
+                <small class="help-text">
+                    <a href="https://github.com/settings/tokens" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Generate token
+                    </a>
+                </small>
             </div>
-            <div class="header-info">
-                <div class="repo-info">
-                    <i class="fab fa-github"></i>
-                    <span>Khisd/Fynexa-key</span>
-                </div>
-                <div class="branch-info">
-                    <i class="fas fa-code-branch"></i>
-                    <span>main</span>
-                </div>
+            
+            <div class="form-group">
+                <label><i class="fas fa-user"></i> Repository Owner</label>
+                <input type="text" id="repoOwner" value="Khisd">
             </div>
-        </header>
-
-        <!-- Main Dashboard -->
-        <div class="dashboard">
-            <!-- File Actions -->
-            <div class="file-actions">
-                <div class="action-group">
-                    <h3><i class="fas fa-file-alt"></i> KEYL File</h3>
-                    <div class="action-buttons">
-                        <button id="loadFile" class="btn btn-primary">
-                            <i class="fas fa-download"></i> Load KEYL
-                        </button>
-                        <button id="createFile" class="btn btn-success">
-                            <i class="fas fa-plus"></i> New KEYL
-                        </button>
-                        <button id="saveFile" class="btn btn-warning">
-                            <i class="fas fa-save"></i> Save KEYL
-                        </button>
-                        <button id="deleteFile" class="btn btn-danger">
-                            <i class="fas fa-trash"></i> Delete KEYL
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Connection Status -->
-                <div class="status-group">
-                    <h3><i class="fas fa-wifi"></i> Connection</h3>
-                    <div class="status-display">
-                        <div class="status-indicator">
-                            <div class="status-dot" id="statusDot"></div>
-                            <span id="statusText">Disconnected</span>
-                        </div>
-                        <div class="last-update" id="lastUpdate">
-                            Last update: Never
-                        </div>
-                    </div>
-                </div>
+            
+            <div class="form-group">
+                <label><i class="fas fa-database"></i> Repository Name</label>
+                <input type="text" id="repoName" value="Fynexa-key">
             </div>
-
-            <!-- Editor Area -->
-            <div class="editor-area">
-                <div class="editor-header">
-                    <h2><i class="fas fa-edit"></i> KEYL Editor</h2>
-                    <div class="editor-tools">
-                        <button id="formatBtn" class="btn-tool">
-                            <i class="fas fa-align-left"></i> Format
-                        </button>
-                        <button id="validateBtn" class="btn-tool">
-                            <i class="fas fa-check-circle"></i> Validate
-                        </button>
-                        <button id="clearBtn" class="btn-tool">
-                            <i class="fas fa-broom"></i> Clear
-                        </button>
-                    </div>
-                </div>
-
-                <div class="editor-container">
-                    <textarea id="keylEditor" placeholder="Enter KEYL content here..."></textarea>
-                    <div class="editor-footer">
-                        <div class="editor-info">
-                            <span id="lineCount">Lines: 0</span>
-                            <span id="charCount">Chars: 0</span>
-                            <span id="sizeInfo">Size: 0 KB</span>
-                        </div>
-                        <div class="editor-encoding">
-                            <select id="encodingSelect">
-                                <option value="utf8">UTF-8</option>
-                                <option value="base64">Base64</option>
-                                <option value="hex">Hex</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Quick Actions -->
-                <div class="quick-actions">
-                    <button id="insertTimestamp" class="btn-action">
-                        <i class="fas fa-clock"></i> Timestamp
-                    </button>
-                    <button id="insertUUID" class="btn-action">
-                        <i class="fas fa-fingerprint"></i> UUID
-                    </button>
-                    <button id="encryptBtn" class="btn-action">
-                        <i class="fas fa-lock"></i> Encrypt
-                    </button>
-                    <button id="decryptBtn" class="btn-action">
-                        <i class="fas fa-unlock"></i> Decrypt
-                    </button>
-                    <button id="hashBtn" class="btn-action">
-                        <i class="fas fa-hashtag"></i> Hash
-                    </button>
-                </div>
+            
+            <div class="form-group">
+                <label><i class="fas fa-code-branch"></i> Branch</label>
+                <input type="text" id="repoBranch" value="main">
             </div>
-
-            <!-- Preview Panel -->
-            <div class="preview-panel">
-                <div class="preview-header">
-                    <h2><i class="fas fa-eye"></i> Preview</h2>
-                    <div class="preview-tabs">
-                        <button class="tab-btn active" data-tab="raw">Raw</button>
-                        <button class="tab-btn" data-tab="parsed">Parsed</button>
-                        <button class="tab-btn" data-tab="hex">Hex View</button>
-                    </div>
-                </div>
-                <div class="preview-content">
-                    <div class="tab-content active" id="rawPreview">
-                        <pre id="rawContent">No content loaded</pre>
-                    </div>
-                    <div class="tab-content" id="parsedPreview">
-                        <pre id="parsedContent">Parsed content will appear here</pre>
-                    </div>
-                    <div class="tab-content" id="hexPreview">
-                        <pre id="hexContent">Hex view will appear here</pre>
-                    </div>
-                </div>
-            </div>
-
-            <!-- File History -->
-            <div class="history-panel">
-                <div class="history-header">
-                    <h2><i class="fas fa-history"></i> File History</h2>
-                    <button id="refreshHistory" class="btn-refresh">
-                        <i class="fas fa-redo"></i>
-                    </button>
-                </div>
-                <div class="history-list" id="historyList">
-                    <div class="history-item">
-                        <div class="history-time">No history available</div>
-                        <div class="history-action">Load KEYL file to see history</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <footer>
-            <div class="footer-content">
-                <div class="footer-left">
-                    <i class="fas fa-database"></i>
-                    <span>Connected to GitHub: <span id="repoPath">Khisd/Fynexa-key/KEYL</span></span>
-                </div>
-                <div class="footer-right">
-                    <span id="fileStats">0 bytes | 0 lines</span>
-                    <span class="footer-separator">|</span>
-                    <span id="apiStatus">API: Ready</span>
-                </div>
-            </div>
-        </footer>
-    </div>
-
-    <!-- Modal Dialogs -->
-    <div id="confirmModal" class="modal">
-        <div class="modal-content">
-            <h3 id="modalTitle">Confirm Action</h3>
-            <p id="modalMessage">Are you sure?</p>
-            <div class="modal-actions">
-                <button id="modalConfirm" class="btn btn-danger">Confirm</button>
-                <button id="modalCancel" class="btn btn-secondary">Cancel</button>
+            
+            <div class="form-actions">
+                <button id="saveAuth" class="btn btn-primary">
+                    <i class="fas fa-check"></i> Save & Connect
+                </button>
+                <button id="cancelAuth" class="btn btn-secondary">
+                    <i class="fas fa-times"></i> Cancel
+                </button>
             </div>
         </div>
     </div>
-
-    <!-- Toast Notification -->
-    <div id="toast" class="toast"></div>
-
-    <script src="script.js"></script>
-</body>
-</html>
+</div>
