@@ -1,14 +1,14 @@
 {
   "metadata": {
-    "key_id": "Trading_Key_001",
+    "key_id": "PANZY#30D",
     "generated_by": "KEYL Manager",
     "version": "1.0.0",
-    "generated_at": "2026-01-29T06:08:15.585Z"
+    "generated_at": "2026-01-29T06:14:05.993Z"
   },
   "authentication": {
-    "key_name": "Trading_Key_001",
+    "key_name": "PANZY#30D",
     "status": "active",
-    "owner": "Demo User",
+    "owner": "PANZ",
     "created_date": "2026-01-29",
     "expiry_days": 30,
     "expiry_date": "2026-02-28"
