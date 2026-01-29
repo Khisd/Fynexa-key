@@ -1,56 +1,22 @@
 {
-  "metadata": {
-    "key_id": "PANZY#30D",
-    "generated_by": "KEYL Manager",
-    "version": "1.0.0",
-    "generated_at": "2026-01-29T06:14:05.993Z"
-  },
-  "authentication": {
-    "key_name": "PANZY#30D",
+  "key_info": {
+    "key_id": "PANZ_ID",
+    "key_name": "PANZ_20260129_144437",
     "status": "active",
-    "owner": "PANZ",
+    "owner": "panz",
     "created_date": "2026-01-29",
-    "expiry_days": 30,
-    "expiry_date": "2026-02-28"
+    "expiry_date": "2026-02-28",
+    "expiry_days": 30
   },
   "trading_settings": {
-    "max_lot": 100,
-    "max_daily_loss": 100,
-    "max_open_positions": 3,
+    "max_lot": 0.05,
     "symbols_allowed": [
-      "XAUUSD"
-    ],
-    "leverage": 100,
-    "margin_call_level": 80,
-    "stop_out_level": 50
+      "ANY"
+    ]
   },
-  "restrictions": {
-    "allowed_timeframes": [
-      "M5",
-      "M15",
-      "H1",
-      "H4",
-      "D1"
-    ],
-    "trade_types": [
-      "BUY",
-      "SELL"
-    ],
-    "trading_hours": "00:00-23:59",
-    "weekend_trading": false,
-    "hedging_allowed": true,
-    "scalping_allowed": true
-  },
-  "statistics": {
-    "total_trades": 0,
-    "total_profit": 0,
-    "success_rate": 0,
-    "daily_profit": 0,
-    "daily_loss": 0
-  },
-  "security": {
-    "two_factor_enabled": false,
-    "auto_logout_minutes": 30,
-    "api_rate_limit": 100
+  "metadata": {
+    "generated_by": "KEYL Manager",
+    "generated_at": "2026-01-29T06:54:37.048Z",
+    "version": "2.0"
   }
 }
